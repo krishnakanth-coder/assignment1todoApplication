@@ -1,0 +1,68 @@
+GET http://localhost:3000/todos/?status=TO%20DO
+###1.2
+GET http://localhost:3000/todos/?priority=HIGH
+###1.4
+GET http://localhost:3000/todos/?search_q=Buy
+###1.6
+GET http://localhost:3000/todos/?category=HOME
+
+###1.3
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+
+
+###1.5
+GET http://localhost:3000/todos/?category=WORK&status=DONE
+
+###1.7
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+
+###2
+GET http://localhost:3000/todos/6/
+
+###3 
+GET http://localhost:3000/agenda/?date=2021-2-22;
+
+###4
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+ "id": 1,
+ "todo": "Telugu movie Bahubali3",
+ "priority": "HIGH",
+ "status": "PROGRESS",
+ "category": "HOME",
+ "dueDate": "2022-02-22"
+}
+###5.1
+PUT http://localhost:3000/todos/1/
+Content-Type: application/json
+
+{ "status": "DON" }
+###5.2
+PUT http://localhost:3000/todos/2/
+Content-Type: application/json
+
+{"priority":"HIGH"}
+
+###5.3
+PUT http://localhost:3000/todos/4/
+Content-Type: application/json
+
+{"todo":"Clean the garden"}
+
+###5.4 WORK , HOME, LEARNING
+PUT http://localhost:3000/todos/4/
+Content-Type: application/json
+
+{"category":"WORK"}
+
+###5.5
+PUT http://localhost:3000/todos/5/
+Content-Type: application/json
+
+{"dueDate":"2021-01-12"}
+
+###6
+DELETE http://localhost:3000/todos/6
